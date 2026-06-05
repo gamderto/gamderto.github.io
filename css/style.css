@@ -19,7 +19,7 @@ html {
 :root {
   --bg: #fafafa;
   --text: #222222;
-  --accent: #973d27; /* header/footer */
+  --accent: #eb5631; /* header/footer */
   --accent-2: #ec7979; /* hover */
   --card-bg: #f8f4f1; /* panel background */
   --link: #ffffff;
