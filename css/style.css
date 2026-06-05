@@ -218,6 +218,9 @@ main{
   .container {
     flex-direction: column !important;
   }
+  .container1 {
+    flex-direction: column !important;
+  }
 }
 
 @media print,
