@@ -119,6 +119,8 @@ main{
   display: flex;
   flex-direction: row;
   justify-content: center;
+  width: 70%;
+  margin: 0 auto;
 }
 
 .container1 {
@@ -294,6 +296,45 @@ main{
   h2,
   h3 {
     page-break-after: avoid;
+  }
+}
+
+/* Small layout helpers: ensure pages vertically stretch and have comfortable spacing */
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.container {
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.omne,
+.container1 {
+  padding: 1rem;
+}
+
+section {
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+/* Slightly reduce padding on very small screens */
+@media only screen and (max-width: 380px) {
+  main {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
   }
 }
 
