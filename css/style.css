@@ -153,6 +153,28 @@ main{
   background-color: var(--card-bg);
 }
 
+form {
+  display: grid;
+  padding: 2%;
+}
+
+form label {
+  display: block;
+  margin: 0 auto;
+  padding: 2px;
+  width: fit-content;
+  text-align: center;
+}
+
+form button {
+  width: 30%;
+  margin: 0 auto;
+}
+
+form label textarea {
+  margin: 0 auto;
+  width: fit-content;
+}
 /* ==========================================================================
    Helper classes
    ========================================================================== */
