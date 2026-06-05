@@ -25,7 +25,9 @@ html {
   --card-bg: #f8f4f1; /* panel background */
   --link: #ffffff;
 }
-
+body {
+  padding: 0;
+}
 body.dark {
   --bg: #2b2b2b;
   --text: #f5f5f5;
