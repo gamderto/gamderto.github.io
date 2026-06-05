@@ -156,25 +156,105 @@ main{
 
 form {
   display: grid;
-  padding: 2%;
+  gap: 1.25rem;
+  max-width: 720px;
+  margin: 2rem auto 3rem;
+  padding: 2rem;
+  background: var(--card-bg);
+  border-radius: 28px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.08);
 }
 
 form label {
-  display: block;
-  margin: 0 auto;
-  padding: 2px;
-  width: fit-content;
-  text-align: center;
+  display: grid;
+  gap: 0.65rem;
+  text-align: left;
+  font-size: 1rem;
+  color: var(--text);
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 1rem 1.1rem;
+  border: 1px solid rgba(34, 34, 34, 0.12);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--text);
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+body.dark form input,
+body.dark form textarea {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.16);
+}
+
+form input:focus,
+form textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px rgba(235, 86, 49, 0.12);
+}
+
+form textarea {
+  min-height: 170px;
+  resize: vertical;
 }
 
 form button {
-  width: 30%;
-  margin: 0 auto;
+  width: min(240px, 100%);
+  justify-self: center;
+  padding: 1rem 1.6rem;
+  border: none;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--link);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
 }
 
-form label textarea {
-  margin: 0 auto;
-  width: fit-content;
+form button:hover,
+form button:focus {
+  background: var(--accent-2);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 760px) {
+  .container {
+    width: min(95%, 100%);
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.5rem;
+  }
+
+  .container1,
+  .omne {
+    width: 100%;
+  }
+
+  header,
+  main,
+  footer {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+@media (max-width: 520px) {
+  form {
+    padding: 1.5rem;
+    gap: 1rem;
+  }
+
+  form button {
+    width: 100%;
+  }
 }
 /* ==========================================================================
    Helper classes
@@ -358,26 +438,121 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  align-items: center;
   padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-bottom: 2.5rem;
 }
 
 .container {
+  display: flex;
+  flex-wrap: wrap;
   gap: 2rem;
-  align-items: flex-start;
+  align-items: stretch;
+  justify-content: center;
+  width: min(1200px, 100%);
+  margin: 0 auto;
 }
 
 .omne,
 .container1 {
-  padding: 1rem;
+  display: grid;
+  gap: 1.2rem;
+  width: min(100%, 300px);
 }
 
 section {
-  margin-bottom: 1rem;
+  margin-bottom: 0;
   text-align: left;
+  background: var(--card-bg);
+  border: 1px solid rgba(34, 34, 34, 0.08);
+  border-radius: 28px;
+  padding: 1.6rem;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.06);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-/* Slightly reduce padding on very small screens */
+section:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.08);
+}
+
+section h2 {
+  margin: 0 0 0.9rem;
+  font-size: 1.45rem;
+  letter-spacing: -0.02em;
+}
+
+section p {
+  margin: 0;
+  line-height: 1.75;
+  color: var(--text);
+}
+
+section ul {
+  list-style: disc;
+  padding-left: 1.4rem;
+  margin: 0;
+  color: var(--text);
+}
+
+section ul li {
+  margin-bottom: 0.75rem;
+  line-height: 1.65;
+}
+
+.detail-row {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.5rem 1rem;
+  align-items: baseline;
+  margin-top: 0.75rem;
+}
+
+.detail-row strong {
+  display: inline-block;
+  min-width: 7rem;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.kurzy-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.kurzy-list li {
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.kurzy-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.7rem;
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--accent);
+}
+
+@media only screen and (max-width: 800px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .omne,
+  .container1 {
+    width: auto;
+    max-width: min(90vw, 560px);
+  }
+}
+
 @media only screen and (max-width: 380px) {
   main {
     padding-top: 1rem;
