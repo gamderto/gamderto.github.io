@@ -101,7 +101,7 @@ textarea {
 
 header {
   display: block;
-  width: 100%;
+  width: 100% !important; 
   text-align: center;
   background-color: var(--accent);
   color: var(--link);
@@ -390,6 +390,7 @@ section {
   padding: 1.25rem 0;
   text-align: center;
   margin-top: 2rem;
+  width: 100% !important;
 }
 
 .site-footer .inner {
