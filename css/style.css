@@ -26,11 +26,11 @@ html {
 }
 
 body.dark {
-  --bg: #0a0a0a;
+  --bg: #2b2b2b;
   --text: #f5f5f5;
-  --accent: #6b1f15;
+  --accent: #b1192d;
   --accent-2: #a85555;
-  --card-bg: #1a1a1a;
+  --card-bg: #627f88;
   --link: #f5f5f5;
 }
 
