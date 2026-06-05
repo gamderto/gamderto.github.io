@@ -90,7 +90,7 @@ header {
   padding-bottom: 0 auto;
 }
 ul {
-  margin: 0 auto;
+  margin: 4px;
 }
 ul li {
   list-style: none;
