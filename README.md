@@ -1,27 +1,24 @@
-# Jacofac
+# J. F. — Software, Spatial Systems & Field Notes
 
-The official Jacofac website: an independent digital design and development
-portfolio built with React, TypeScript, Vite, and Tailwind CSS.
+A responsive portfolio and curriculum vitae built with React, TypeScript and
+Vite. Client-side navigation uses `HashRouter` so all pages work on GitHub Pages.
 
-## Getting started
+## Pages
+
+- `/` — Intro sequence, technical overview, practice bio and quick routes.
+- `/cv` — Education, Corageo experience, interactive skill matrix and print view.
+- `/projects` — Filterable engineering case studies with selectable architecture
+  layers. The cases are representative studies, not claims of deployed products.
+- `/expeditions` — Interactive Java waypoint explorer and field notes.
+
+## Development
 
 ```sh
 npm install
 npm run dev
-```
-
-Create and type-check the production build with:
-
-```sh
 npm run build
 ```
 
-## Project structure
-
-- `src/App.tsx` contains the page sections and their small, local interactions.
-- `src/styles.css` defines the visual system, responsive layouts, and motion.
-- `tailwind.config.js` holds the shared theme tokens for future utility-based
-  styling.
-
-The contact form validates in the browser and prepares an email draft in the
-visitor's email application; it does not transmit or store form data.
+The home intro is shown once per browser session and can be skipped. The shared
+footer contact form validates fields in the browser and prepares an email draft;
+it does not transmit or store form data.
