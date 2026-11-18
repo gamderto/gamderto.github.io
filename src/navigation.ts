@@ -1,6 +1,6 @@
 export const navigation = [
-  { to: "/", label: "Home", end: true },
-  { to: "/cv", label: "Curriculum vitae" },
-  { to: "/projects", label: "Projects" },
-  { to: "/expeditions", label: "Expeditions" },
+  { to: "/", label: "Domov", end: true },
+  { to: "/cv", label: "Životopis" },
+  { to: "/projects", label: "Projekty" },
+  { to: "/expeditions", label: "Expedície" },
 ];

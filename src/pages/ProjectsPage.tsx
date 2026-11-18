@@ -3,7 +3,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { ArrowRight, ArrowUpRight, Network, X } from "lucide-react";
 import PageFrame from "../components/PageFrame";
 
-type ProjectCategory = "Geo-Infrastructure" | "Systems & Backend" | "Web & Database";
+type ProjectCategory = "Geoinfraštruktúra" | "Systémy a backend" | "Web a databázy";
 type Project = {
   number: string;
   title: string;
@@ -19,51 +19,51 @@ type Project = {
 const projects: Project[] = [
   {
     number: "01",
-    title: "Spatial Infrastructure & Mapping Portal", // [Project Name - Edit Me]
-    category: "Geo-Infrastructure",
-    summary: "A practical portal concept for browsing infrastructure records with their geographic context.",
-    problem: "Infrastructure records are hard to use when asset details and their location live in separate tools. Operators need a consistent view of what exists, where it is, and how its record is maintained.",
-    architecture: "PHP application layer serves map and record views; MySQL stores normalized asset, location and category data; JavaScript coordinates map interactions and filters.",
-    implementation: "A shared asset identifier links relational records to coordinate pairs. Server-side validation protects edits; indexed category and location fields make filtering predictable as records grow.",
-    diagram: ["PHP UI", "Spatial API", "MySQL + coordinates"],
+    title: "Portál priestorových dát a infraštruktúry",
+    category: "Geoinfraštruktúra",
+    summary: "Návrh portálu na prehliadanie záznamov o infraštruktúre v ich geografickom kontexte.",
+    problem: "Záznamy o infraštruktúre sa ťažko používajú, keď sú údaje o objektoch a ich poloha v oddelených nástrojoch. Používatelia potrebujú jednotný prehľad o tom, čo sa kde nachádza a ako sa príslušný záznam udržiava.",
+    architecture: "Aplikačná vrstva v PHP sprístupňuje mapu a detailné záznamy; MySQL uchováva normalizované údaje o objektoch, polohách a kategóriách; JavaScript zabezpečuje interakcie s mapou a filtrovanie.",
+    implementation: "Relačné záznamy prepája spoločný identifikátor objektu so súradnicami. Serverová validácia chráni úpravy údajov a indexované polia kategórie a polohy zabezpečujú predvídateľné filtrovanie aj pri raste objemu dát.",
+    diagram: ["Rozhranie PHP", "Priestorové API", "MySQL + súradnice"],
     mark: "GEO / 001",
   },
   {
     number: "02",
-    title: "Concurrent Data Processing Engine", // [Project Name - Edit Me]
-    category: "Systems & Backend",
-    summary: "A systems study in partitioning input, processing work concurrently and collecting consistent results.",
-    problem: "Large input sets can make single-threaded processing slow and unresponsive. The design needs to divide independent work without losing ordering, correctness or clear failure reporting.",
-    architecture: "A C++ processing core uses a bounded worker pool and task queue, with a Java-facing model for structured configuration and result inspection.",
-    implementation: "Input is divided into deterministic chunks. Workers return typed results to a synchronized collector; the coordinator reports progress and consolidates output only after completion.",
-    diagram: ["Input queue", "Worker pool", "Ordered results"],
+    title: "Paralelný nástroj na spracovanie dát",
+    category: "Systémy a backend",
+    summary: "Návrh systémového riešenia na rozdelenie vstupu, súbežné spracovanie úloh a spoľahlivé zhromažďovanie výsledkov.",
+    problem: "Pri veľkých vstupných súboroch môže byť jednovláknové spracovanie pomalé a nereagujúce. Návrh musí rozdeliť nezávislé úlohy bez straty poradia, správnosti či zrozumiteľného hlásenia chýb.",
+    architecture: "Spracovateľské jadro v C++ využíva obmedzený fond pracovných vlákien a front úloh; rozhranie v jazyku Java umožňuje štruktúrovanú konfiguráciu a kontrolu výsledkov.",
+    implementation: "Vstup sa delí na deterministické časti. Vlákna odovzdávajú typované výsledky synchronizovanému zberaču; koordinátor priebežne hlási stav a výstup zostaví až po dokončení práce.",
+    diagram: ["Front vstupu", "Fond vlákien", "Výsledky v poradí"],
     mark: "SYS / 002",
   },
   {
     number: "03",
-    title: "Spatial Data Automation Pipeline", // [Project Name - Edit Me]
-    category: "Geo-Infrastructure",
-    summary: "A repeatable Python workflow to check, transform and summarize spatial datasets.",
-    problem: "Manual spatial data preparation is easy to repeat inconsistently. Coordinate assumptions, missing fields and malformed records should be detected before downstream use.",
-    architecture: "Python stages handle source inspection, validation, transformation and report output; each stage passes a clear data contract to the next.",
-    implementation: "The pipeline checks required attributes, records invalid geometries and produces a concise run summary. Explicit coordinate-system metadata prevents silent assumptions during transformation.",
-    diagram: ["Inspect source", "Validate / transform", "Export + report"],
-    mark: "DATA / 003",
+    title: "Automatizované spracovanie priestorových dát",
+    category: "Geoinfraštruktúra",
+    summary: "Opakovateľný pracovný postup v jazyku Python na kontrolu, transformáciu a sumarizáciu priestorových súborov.",
+    problem: "Pri manuálnej príprave priestorových dát ľahko vznikajú nejednotné výsledky. Pred ďalším spracovaním treba odhaliť nejasné predpoklady o súradniciach, chýbajúce polia aj nesprávne záznamy.",
+    architecture: "Jednotlivé kroky v jazyku Python zabezpečujú kontrolu zdroja, validáciu, transformáciu a tvorbu výstupnej správy; každý odovzdáva ďalšiemu jasne definované údaje.",
+    implementation: "Postup kontroluje povinné atribúty, zaznamenáva neplatné geometrie a vytvára stručný súhrn spracovania. Výslovné metadáta o súradnicovom systéme predchádzajú skrytým predpokladom pri transformácii.",
+    diagram: ["Kontrola zdroja", "Validácia / transformácia", "Export + správa"],
+    mark: "DÁTA / 003",
   },
   {
     number: "04",
-    title: "Relational Service & Web Platform", // [Project Name - Edit Me]
-    category: "Web & Database",
-    summary: "A full-stack platform model for structured records, predictable queries and a responsive front end.",
-    problem: "A growing dataset becomes fragile when related information is duplicated or updated through disconnected pages. Users need clear forms and trustworthy records.",
-    architecture: "A responsive frontend submits to PHP endpoints; MySQL constraints and relational tables preserve data integrity; SQL queries support filtered list and detail views.",
-    implementation: "The schema separates entities into linked tables with primary and foreign keys. Form validation happens at the interface and server boundary, with explicit feedback for failed operations.",
-    diagram: ["Responsive UI", "PHP endpoints", "Relational schema"],
+    title: "Relačná služba a webová platforma",
+    category: "Web a databázy",
+    summary: "Model webovej platformy na prácu so štruktúrovanými záznamami, predvídateľnými dopytmi a responzívnym rozhraním.",
+    problem: "Rastúca množina dát sa stáva nespoľahlivou, keď sa súvisiace informácie duplikujú alebo upravujú na oddelených stránkach. Používatelia potrebujú zrozumiteľné formuláre a dôveryhodné záznamy.",
+    architecture: "Responzívne rozhranie odosiela požiadavky na koncové body v PHP; obmedzenia v MySQL a relačné tabuľky chránia integritu dát; dopyty v SQL zabezpečujú filtrované zoznamy a podrobné zobrazenia.",
+    implementation: "Schéma rozdeľuje entity do prepojených tabuliek s primárnymi a cudzími kľúčmi. Formuláre sa validujú v rozhraní aj na serveri a pri neúspešnej operácii používateľ dostane jasnú spätnú väzbu.",
+    diagram: ["Responzívne rozhranie", "Koncové body PHP", "Relačná schéma"],
     mark: "WEB / 004",
   },
 ];
 
-const projectFilters = ["All Projects", "Geo-Infrastructure", "Systems & Backend", "Web & Database"] as const;
+const projectFilters = ["Všetky projekty", "Geoinfraštruktúra", "Systémy a backend", "Web a databázy"] as const;
 type ProjectFilter = (typeof projectFilters)[number];
 
 function ProjectDetail({ project, onClose }: { project: Project; onClose: () => void }) {
@@ -80,15 +80,15 @@ function ProjectDetail({ project, onClose }: { project: Project; onClose: () => 
   return (
     <motion.div className="modal-backdrop" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onMouseDown={(event) => { if (event.target === event.currentTarget) onClose(); }}>
       <motion.article className="case-modal" role="dialog" aria-modal="true" aria-labelledby="case-title" initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 16 }} transition={{ duration: 0.25 }}>
-        <div className="case-modal-head"><span>{project.mark} / CASE STUDY</span><button type="button" aria-label="Close case study" onClick={onClose}><X size={20} /></button></div>
+        <div className="case-modal-head"><span>{project.mark} / PRÍPADOVÁ ŠTÚDIA</span><button type="button" aria-label="Zavrieť detail projektu" onClick={onClose}><X size={20} /></button></div>
         <p className="eyebrow">{project.category}</p><h2 id="case-title">{project.title}</h2><p className="case-summary">{project.summary}</p>
         <div className="case-content">
-          <section><span className="eyebrow">01 / PROBLEM SOLVED</span><p>{project.problem}</p></section>
-          <section><span className="eyebrow">02 / ARCHITECTURE & STACK</span><p>{project.architecture}</p></section>
-          <section><span className="eyebrow">03 / KEY IMPLEMENTATION</span><p>{project.implementation}</p></section>
+          <section><span className="eyebrow">01 / RIEŠENÝ PROBLÉM</span><p>{project.problem}</p></section>
+          <section><span className="eyebrow">02 / ARCHITEKTÚRA A TECHNOLÓGIE</span><p>{project.architecture}</p></section>
+          <section><span className="eyebrow">03 / KĽÚČOVÁ IMPLEMENTÁCIA</span><p>{project.implementation}</p></section>
         </div>
         <div className="case-diagram">
-          <div className="diagram-label"><Network size={15} /> INTERACTIVE ARCHITECTURE / SELECT A LAYER</div>
+          <div className="diagram-label"><Network size={15} /> INTERAKTÍVNA ARCHITEKTÚRA / VYBERTE VRSTVU</div>
           <div className="diagram-flow">
             {project.diagram.map((part, index) => (
               <button
@@ -104,8 +104,8 @@ function ProjectDetail({ project, onClose }: { project: Project; onClose: () => 
             ))}
           </div>
           <div className="mock-data">
-            <span>MOCK DATA / {project.mark} / LAYER 0{selectedLayer + 1}</span>
-            <code>{`{ "component": "${project.diagram[selectedLayer]}", "status": "validated" }`}</code>
+            <span>UKÁŽKOVÉ DÁTA / {project.mark} / VRSTVA 0{selectedLayer + 1}</span>
+            <code>{`{ "komponent": "${project.diagram[selectedLayer]}", "stav": "overené" }`}</code>
           </div>
         </div>
       </motion.article>
@@ -114,43 +114,43 @@ function ProjectDetail({ project, onClose }: { project: Project; onClose: () => 
 }
 
 export default function ProjectsPage() {
-  const [filter, setFilter] = useState<ProjectFilter>("All Projects");
+  const [filter, setFilter] = useState<ProjectFilter>("Všetky projekty");
   const [activeProject, setActiveProject] = useState<Project | null>(null);
-  const visibleProjects = projects.filter((project) => filter === "All Projects" || project.category === filter);
+  const visibleProjects = projects.filter((project) => filter === "Všetky projekty" || project.category === filter);
 
   return (
     <PageFrame className="projects-page">
       <section className="page-hero wrap">
-        <div className="page-hero-copy"><p className="eyebrow"><span>DOCUMENT 02</span> PROJECTS / ENGINEERING</p><h1>Systems made<br />for <em>real context.</em></h1><p>Four engineering studies across mapping, data processing, application architecture and relational web systems. Open a case to inspect the design decisions.</p></div>
-        <div className="page-hero-index"><span>PORTFOLIO</span><strong>04 CASES</strong><span>TECHNICAL STUDIES</span></div>
+        <div className="page-hero-copy"><p className="eyebrow"><span>DOKUMENT 02</span> PROJEKTY / INŽINIERSTVO</p><h1>Systémy navrhnuté<br />pre <em>skutočný svet.</em></h1><p>Štyri technické štúdie zamerané na mapovanie, spracovanie dát, architektúru aplikácií a relačné webové systémy. Otvorte si detail a preskúmajte rozhodnutia pri návrhu.</p></div>
+        <div className="page-hero-index"><span>PORTFÓLIO</span><strong>04 ŠTÚDIE</strong><span>TECHNICKÉ NÁVRHY</span></div>
       </section>
       <section className="project-showcase">
         <div className="wrap">
-          <div className="project-toolbar"><span className="eyebrow">SELECTED ENGINEERING / {String(visibleProjects.length).padStart(2, "0")}</span><div className="project-filters" role="group" aria-label="Filter projects">{projectFilters.map((item) => <button type="button" key={item} aria-pressed={filter === item} className={filter === item ? "is-active" : ""} onClick={() => setFilter(item)}>{item}</button>)}</div></div>
+          <div className="project-toolbar"><span className="eyebrow">VYBRANÉ TECHNICKÉ NÁVRHY / {String(visibleProjects.length).padStart(2, "0")}</span><div className="project-filters" role="group" aria-label="Filtrovať projekty">{projectFilters.map((item) => <button type="button" key={item} aria-pressed={filter === item} className={filter === item ? "is-active" : ""} onClick={() => setFilter(item)}>{item}</button>)}</div></div>
           <div className="engineering-grid">
             {visibleProjects.map((project) => (
               <motion.article className="engineering-card" key={project.number} layout initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.25 }}>
-                <button className="engineering-open" type="button" onClick={() => setActiveProject(project)} aria-label={`Open case study: ${project.title}`}>
+                <button className="engineering-open" type="button" onClick={() => setActiveProject(project)} aria-label={`Otvoriť prípadovú štúdiu: ${project.title}`}>
                   <div className={`project-visual project-visual--${project.number}`}>
-                    <span className="visual-topline">{project.mark}<span>SCHEMATIC / NOT TO SCALE</span></span>
+                    <span className="visual-topline">{project.mark}<span>SCHEMATICKÉ / NIE JE V MERÍTKU</span></span>
                     <div className="visual-lines"><i /><i /><i /><i /><b /></div>
                     <div className="visual-stamp">{project.number}<ArrowUpRight size={16} /></div>
                     <span className="visual-caption">{project.diagram.join(" → ")}</span>
                   </div>
-                  <div className="engineering-info"><div><span className="project-type">{project.category}</span><h2>{project.title}</h2><p>{project.summary}</p></div><span className="open-case">OPEN CASE <ArrowUpRight size={15} /></span></div>
+                  <div className="engineering-info"><div><span className="project-type">{project.category}</span><h2>{project.title}</h2><p>{project.summary}</p></div><span className="open-case">ZOBRAZIŤ DETAIL <ArrowUpRight size={15} /></span></div>
                   <div className="engineering-specs">
-                    <div><span>PROBLEM SOLVED</span><p>{project.problem}</p></div>
-                    <div><span>ARCHITECTURE & STACK</span><p>{project.architecture}</p></div>
-                    <div><span>KEY IMPLEMENTATION</span><p>{project.implementation}</p></div>
+                    <div><span>RIEŠENÝ PROBLÉM</span><p>{project.problem}</p></div>
+                    <div><span>ARCHITEKTÚRA A TECHNOLÓGIE</span><p>{project.architecture}</p></div>
+                    <div><span>KĽÚČOVÁ IMPLEMENTÁCIA</span><p>{project.implementation}</p></div>
                   </div>
                 </button>
               </motion.article>
             ))}
           </div>
-          <div className="project-disclaimer"><span className="status-dot" /> CONCEPTUAL CASE STUDIES / TECHNICAL APPROACHES, NOT CLAIMS OF DEPLOYED PRODUCTS.</div>
+          <div className="project-disclaimer"><span className="status-dot" /> KONCEPČNÉ ŠTÚDIE A TECHNICKÉ NÁVRHY, NIE PREZENTÁCIA NASADENÝCH PRODUKTOV.</div>
         </div>
       </section>
-      <section className="project-process wrap"><div><p className="eyebrow"><span>01</span> METHOD</p><h2>Trace the problem<br />to <em>the data.</em></h2></div><div className="process-steps"><div><span>01</span><strong>Locate the need</strong><p>Define who needs the system and what decision it should support.</p></div><div><span>02</span><strong>Model the information</strong><p>Choose the structures, relationships and validation rules before the interface.</p></div><div><span>03</span><strong>Make it inspectable</strong><p>Expose useful state, clear errors and behavior that can be tested.</p></div></div></section>
+      <section className="project-process wrap"><div><p className="eyebrow"><span>01</span> POSTUP</p><h2>Od problému<br />až <em>k dátam.</em></h2></div><div className="process-steps"><div><span>01</span><strong>Určiť potrebu</strong><p>Ujasniť si, kto bude systém používať a aké rozhodnutie má podporiť.</p></div><div><span>02</span><strong>Navrhnúť údaje</strong><p>Ešte pred rozhraním zvoliť vhodné štruktúry, vzťahy a pravidlá validácie.</p></div><div><span>03</span><strong>Uľahčiť kontrolu</strong><p>Sprístupniť dôležité stavy, zrozumiteľné chyby a správanie, ktoré možno testovať.</p></div></div></section>
       <AnimatePresence>{activeProject && <ProjectDetail project={activeProject} onClose={() => setActiveProject(null)} />}</AnimatePresence>
     </PageFrame>
   );

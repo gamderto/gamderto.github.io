@@ -1,17 +1,17 @@
-# J. F. — Software, Spatial Systems & Field Notes
+# Mattiás Pleš — softvér, priestorové systémy a zápisky z terénu
 
-A responsive portfolio and curriculum vitae built with React, TypeScript and
-Vite. Client-side navigation uses `HashRouter` so all pages work on GitHub Pages.
+Responzívne portfólio a životopis vytvorené pomocou React, TypeScript a Vite.
+Navigácia na strane klienta používa `HashRouter`, vďaka čomu všetky stránky
+fungujú na GitHub Pages.
 
-## Pages
+## Stránky
 
-- `/` — Intro sequence, technical overview, practice bio and quick routes.
-- `/cv` — Education, Corageo experience, interactive skill matrix and print view.
-- `/projects` — Filterable engineering case studies with selectable architecture
-  layers. The cases are representative studies, not claims of deployed products.
-- `/expeditions` — Interactive Java waypoint explorer and field notes.
+- `/` — Úvodná animácia, technický prehľad, predstavenie praxe a odkazy na hlavné sekcie.
+- `/cv` — Vzdelanie, skúsenosti zo spoločnosti Corageo, interaktívny prehľad zručností a tlačová verzia.
+- `/projects` — Filtrovatelné technické štúdie s interaktívnym výberom vrstiev architektúry. Ide o koncepčné návrhy, nie o tvrdenia o nasadených produktoch.
+- `/expeditions` — Interaktívny prieskumník lokalít na Jáve a poznámky z terénu.
 
-## Development
+## Vývoj
 
 ```sh
 npm install
@@ -19,6 +19,6 @@ npm run dev
 npm run build
 ```
 
-The home intro is shown once per browser session and can be skipped. The shared
-footer contact form validates fields in the browser and prepares an email draft;
-it does not transmit or store form data.
+Úvodná animácia domovskej stránky sa zobrazí raz počas relácie prehliadača a možno
+ju preskočiť. Kontaktný formulár v pätičke kontroluje vyplnené údaje v prehliadači
+a pripraví koncept e-mailu; údaje neodosiela ani neukladá.

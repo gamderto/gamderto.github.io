@@ -6,16 +6,16 @@ import IntroSequence from "../components/IntroSequence";
 import PageFrame from "../components/PageFrame";
 
 const overviewCards = [
-  { index: "01", title: "Curriculum vitae", detail: "Study, practice & technical stack", to: "/cv", icon: Braces },
-  { index: "02", title: "Projects", detail: "Systems, data & spatial tooling", to: "/projects", icon: Layers3 },
-  { index: "03", title: "Expeditions", detail: "Ancient Indonesia, read through place", to: "/expeditions", icon: Map },
+  { index: "01", title: "Životopis", detail: "Štúdium, prax a technológie", to: "/cv", icon: Braces },
+  { index: "02", title: "Projekty", detail: "Systémy, dáta a priestorové nástroje", to: "/projects", icon: Layers3 },
+  { index: "03", title: "Expedície", detail: "Staroveká Indonézia v kontexte krajiny", to: "/expeditions", icon: Map },
 ];
 
 const focusItems = [
-  { label: "Systems", detail: "C / C++ / Java", value: "01" },
-  { label: "Data", detail: "SQL / schema design", value: "02" },
-  { label: "Web", detail: "Interfaces / application logic", value: "03" },
-  { label: "Field", detail: "Geo-infrastructure / Corageo", value: "04" },
+  { label: "Systémy", detail: "C / C++ / Java", value: "01" },
+  { label: "Dáta", detail: "SQL / návrh databázovej schémy", value: "02" },
+  { label: "Web", detail: "Rozhrania / aplikačná logika", value: "03" },
+  { label: "Terén", detail: "Geoinfraštruktúra / Corageo", value: "04" },
 ];
 
 export default function HomePage() {
@@ -34,17 +34,17 @@ export default function HomePage() {
       <PageFrame>
         <section className="home-hero wrap">
           <div className="hero-copy">
-            <p className="eyebrow"><span className="status-dot" /> TECHNICAL STUDENT / SOFTWARE DEVELOPER</p>
-            <h1>Building systems<br />that <em>make sense</em><br />in the real world.</h1>
-            <p className="hero-lede">I’m a technical student and software developer in Slovakia, working across systems programming, relational data, web interfaces and geospatial infrastructure.</p>
-            <div className="hero-meta"><span><Map size={14} /> Spišská Nová Ves, Slovakia</span><span>48°56′ N / 20°34′ E</span></div>
+            <p className="eyebrow"><span className="status-dot" /> ŠTUDENT TECHNICKÉHO ODBORU / VÝVOJÁR SOFTVÉRU</p>
+            <h1>Tvorím systémy,<br />ktoré <em>dávajú zmysel</em><br />v skutočnom svete.</h1>
+            <p className="hero-lede">Som študent technického odboru a vývojár zo Slovenska. Venujem sa systémovému programovaniu, relačným databázam, webovým rozhraniam a geoinfraštruktúre.</p>
+            <div className="hero-meta"><span><Map size={14} /> Spišská Nová Ves, Slovensko</span><span>48°56′ N / 20°34′ E</span></div>
             <div className="hero-actions">
-              <NavLink className="button button--primary" to="/projects">Explore engineering work <ArrowDownRight size={16} /></NavLink>
-              <NavLink className="text-link" to="/cv">View the CV <ArrowRight size={15} /></NavLink>
+              <NavLink className="button button--primary" to="/projects">Pozrieť technické projekty <ArrowDownRight size={16} /></NavLink>
+              <NavLink className="text-link" to="/cv">Zobraziť životopis <ArrowRight size={15} /></NavLink>
             </div>
           </div>
-          <div className="hero-graphic" aria-label="Schematic map with a connected coordinate grid" role="img">
-            <div className="graphic-top"><span>FIELD / 48.9445° N</span><span>MAP REF. 001</span></div>
+          <div className="hero-graphic" aria-label="Schematická mapa s prepojenou súradnicovou sieťou" role="img">
+            <div className="graphic-top"><span>TERÉN / 48.9445° N</span><span>MAPOVÝ BOD 001</span></div>
             <svg className="contour-map" viewBox="0 0 640 520" aria-hidden="true">
               <path d="M35 162c70-82 155-57 218-98s151-30 202 20 105 53 150 35" />
               <path d="M13 203c70-82 155-57 218-98s151-30 202 20 105 53 150 35" />
@@ -58,7 +58,7 @@ export default function HomePage() {
             </svg>
             <div className="graphic-crosshair"><span /><i /></div>
             <div className="graphic-coordinate"><span>SVK / 01</span><strong>48.9445° N</strong><strong>20.5615° E</strong></div>
-            <span className="graphic-caption">TERRAIN / DATA / CONNECTION</span>
+            <span className="graphic-caption">TERÉN / DÁTA / SÚVISLOSTI</span>
           </div>
           <span className="hero-index">PORTFOLIO — 2026 / 01</span>
         </section>
@@ -66,8 +66,8 @@ export default function HomePage() {
         <section className="overview-section">
           <div className="wrap">
             <div className="section-intro">
-              <div><p className="eyebrow"><span>01</span> START HERE</p><h2>Three ways into<br /><em>the work.</em></h2></div>
-              <p>Technical learning is most useful when it meets a real problem. Choose a route to see how I approach it.</p>
+              <div><p className="eyebrow"><span>01</span> ZAČNITE TU</p><h2>Tri cesty<br /><em>k mojej práci.</em></h2></div>
+              <p>Technické poznatky sú najprínosnejšie, keď pomáhajú riešiť skutočný problém. Vyberte si oblasť a pozrite sa, ako k nej pristupujem.</p>
             </div>
             <div className="overview-grid">
               {overviewCards.map(({ index, title, detail, to, icon: Icon }) => (
@@ -85,13 +85,13 @@ export default function HomePage() {
         <section className="focus-section">
           <div className="wrap focus-layout">
             <div className="focus-heading">
-              <p className="eyebrow"><span>02</span> AT A GLANCE</p>
-              <h2>From the low<br />level to the <em>landscape.</em></h2>
-              <p>A broad technical education, connected to practical geo-infrastructure work at Corageo.</p>
+              <p className="eyebrow"><span>02</span> PREHĽAD</p>
+              <h2>Od nízkoúrovňového<br />kódu až po <em>krajinu.</em></h2>
+              <p>Široké technické vzdelávanie prepájam s praktickou prácou v oblasti geoinfraštruktúry v spoločnosti Corageo.</p>
             </div>
             <div className="focus-console">
-              <div className="console-header"><span><i /> FOCUS MATRIX</span><span>SELECT A DOMAIN</span></div>
-              <div className="focus-options" role="tablist" aria-label="Technical focus areas">
+              <div className="console-header"><span><i /> OBLASTI ZÁUJMU</span><span>VYBERTE OBLASŤ</span></div>
+              <div className="focus-options" role="tablist" aria-label="Oblasti technického zamerania">
                 {focusItems.map((item, index) => (
                   <button
                     className={focusIndex === index ? "is-selected" : ""}
@@ -106,33 +106,33 @@ export default function HomePage() {
                 ))}
               </div>
               <div className="focus-result" role="tabpanel">
-                <span>ACTIVE DOMAIN / {focusItems[focusIndex].value}</span>
+                <span>VYBRANÁ OBLASŤ / {focusItems[focusIndex].value}</span>
                 <strong>{focusItems[focusIndex].detail}</strong>
                 <p>{[
-                  "Building confidence with compiled languages, explicit data structures and algorithmic foundations.",
-                  "Designing tables and queries that keep structured information consistent and useful.",
-                  "Connecting clear responsive interfaces with the logic and data behind them.",
-                  "Applying technical web and data skills to spatial workflows and infrastructure support.",
+                  "Osvojujem si kompilované jazyky, prácu s dátovými štruktúrami a základy algoritmického myslenia.",
+                  "Navrhujem tabuľky a dopyty tak, aby štruktúrované informácie zostali konzistentné a užitočné.",
+                  "Prepájam prehľadné responzívne rozhrania s aplikačnou logikou a dátami, ktoré ich poháňajú.",
+                  "Využívam webové a dátové zručnosti pri práci s priestorovými údajmi a technickou infraštruktúrou.",
                 ][focusIndex]}</p>
               </div>
-              <div className="console-foot"><span>FOCUS AREAS 04</span><span>LIVE / INTERACTIVE</span></div>
+              <div className="console-foot"><span>OBLASTI ZÁUJMU 04</span><span>ŽIVÉ / INTERAKTÍVNE</span></div>
             </div>
           </div>
         </section>
         <section className="bio-section">
           <div className="wrap bio-grid">
-            <div><p className="eyebrow"><span>03</span> ABOUT / PRACTICE</p><h2>Technical by training.<br /><em>Grounded in place.</em></h2></div>
+            <div><p className="eyebrow"><span>03</span> O MNE / PRAX</p><h2>Technické vzdelanie.<br /><em>Pevné spojenie s miestom.</em></h2></div>
             <div className="bio-copy">
-              <p>I’m studying technical systems in Spišská Nová Ves while building practical experience in software and geospatial infrastructure. At Corageo, spatial data and technical web support connect classroom ideas to real operational workflows.</p>
-              <p>The through-line is dependable structure: programs that handle data carefully, interfaces that make it easier to inspect, and geographic context that keeps the system connected to the world it represents.</p>
-              <NavLink className="text-link" to="/cv">Education and experience <ArrowRight size={15} /></NavLink>
+              <p>V Spišskej Novej Vsi študujem technické odbory a zároveň získavam praktické skúsenosti s vývojom softvéru a geoinfraštruktúrou. V spoločnosti Corageo prepájam priestorové dáta a technickú podporu webových riešení s reálnymi pracovnými postupmi.</p>
+              <p>Spoločným menovateľom je spoľahlivá štruktúra: programy, ktoré zodpovedne spracúvajú dáta, rozhrania uľahčujúce ich kontrolu a geografický kontext, ktorý systém prepája so svetom, ktorý opisuje.</p>
+              <NavLink className="text-link" to="/cv">Vzdelanie a skúsenosti <ArrowRight size={15} /></NavLink>
             </div>
           </div>
         </section>
         <section className="home-outro wrap">
-          <span className="eyebrow">NEXT FIELD NOTE</span>
-          <NavLink to="/expeditions">Read the landscape <ArrowRight size={17} /></NavLink>
-          <p>Ancient Indonesian architecture, geography and the engineering choices that tie them together.</p>
+          <span className="eyebrow">ĎALŠÍ ZÁPISOK Z TERÉNU</span>
+          <NavLink to="/expeditions">Spoznajte krajinu <ArrowRight size={17} /></NavLink>
+          <p>Staroveká indonézska architektúra, geografia a technické riešenia, ktoré ich prepájajú.</p>
         </section>
       </PageFrame>
       <AnimatePresence>{introVisible && <IntroSequence onFinish={finishIntro} />}</AnimatePresence>

@@ -14,14 +14,14 @@ export default function Navbar() {
   return (
     <header className="site-header">
       <div className="header-inner wrap">
-        <NavLink className="brand" to="/" aria-label="J. F. home">
-          <span className="brand-mark">JF<span> / </span>01</span>
-          <span className="brand-name">J. F. <small>FIELD / CODE</small></span>
+        <NavLink className="brand" to="/" aria-label="Mattiás Pleš – domov">
+          <span className="brand-mark">MP<span> / </span>01</span>
+          <span className="brand-name">Mattiás Pleš <small>TERÉN / KÓD</small></span>
         </NavLink>
         <button
           className="menu-toggle"
           type="button"
-          aria-label={menuOpen ? "Close navigation" : "Open navigation"}
+          aria-label={menuOpen ? "Zavrieť navigáciu" : "Otvoriť navigáciu"}
           aria-expanded={menuOpen}
           aria-controls="primary-navigation"
           onClick={() => setMenuOpen((open) => !open)}
@@ -31,7 +31,7 @@ export default function Navbar() {
         <nav
           className={`main-nav${menuOpen ? " main-nav--open" : ""}`}
           id="primary-navigation"
-          aria-label="Main navigation"
+          aria-label="Hlavná navigácia"
         >
           {navigation.map(({ to, label, end }) => (
             <NavLink
@@ -43,7 +43,7 @@ export default function Navbar() {
               {label}
             </NavLink>
           ))}
-          <span className="nav-location"><i /> Slovakia / Europe</span>
+          <span className="nav-location"><i /> Slovensko / Európa</span>
         </nav>
       </div>
     </header>
